@@ -1,0 +1,26 @@
+{
+  "name": "feishu-weather-a-parser",
+  "version": "1.0.0",
+  "description": "气象A/Q文件解析器，TypeScript+Node.js实现，支持本地开箱即用，适配飞书天气机器人技能",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
+    "xlsx": "^0.18.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

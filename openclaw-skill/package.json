@@ -1,0 +1,39 @@
+{
+  "name": "openclaw-weather-aq-parser",
+  "version": "1.0.0",
+  "description": "OpenClaw skill for parsing weather A/Q files",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "openclaw",
+    "weather",
+    "parser",
+    "aq-file"
+  ],
+  "author": "weather-aq-parser team",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weather-aq-parser/weather-aq-parser.git"
+  },
+  "homepage": "https://github.com/weather-aq-parser/weather-aq-parser#readme"
+}

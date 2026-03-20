@@ -1,0 +1,118 @@
+# 气象A/Q文件解析器 - OpenClaw技能配置
+
+# 技能元数据
+metadata:
+  name: weather-aq-parser
+  version: 1.0.0
+  description: 解析气象A/Q文件，生成Excel报表并支持数据库存储
+  author: weather-aq-parser团队
+  category: weather
+  tags: [weather, parser, excel, database]
+
+# 默认参数配置
+defaults:
+  outputDir: "./output"
+  dbPath: null
+  encoding: "utf-8"
+
+# 环境变量映射
+env:
+  FILE_PATH: filePath
+  DB_PATH: dbPath
+  OUTPUT_DIR: outputDir
+
+# 日志配置
+logging:
+  level: "info"
+  format: "text"
+  file: "weather-aq-parser.log"
+
+# 性能配置
+performance:
+  maxFileSize: 104857600  # 100MB
+  maxMemoryUsage: 536870912  # 512MB
+  batchSize: 100  # 数据库批量插入大小
+
+# 验证规则
+validation:
+  filePath:
+    required: true
+    type: string
+    pattern: "^.*\\.(TXT|txt)$"
+  dbPath:
+    type: string
+    nullable: true
+    pattern: "^.*\\.(db|sqlite3|sqlite)$"
+  outputDir:
+    type: string
+    nullable: true
+
+# 解析器配置
+parser:
+  monthConfig:
+    takeP: 62
+    takePC: 62
+    takePN: 62
+    takeHP: 31
+    takeT: 62
+    takeT1: 62
+    takeT2: 62
+    takeT3: 62
+    takeT4: 62
+    takeIBL: 31
+    takeEA: 62
+    takeUB: 62
+    takeVB: 62
+    takeFN1: 124
+    takeFN2: 124
+    takeFN3: 31
+    takeR61: 31
+    takeR62: 31
+    takeS2: 31
+    takeLA: 31
+    takeB: 62
+    takeDB1: 62
+    takeDB2: 62
+    takeDB3: 62
+    takeDB4: 62
+    takeDB5: 62
+    takeDB6: 62
+    takeKB1: 31
+    takeKB2: 31
+    takeKB3: 31
+    takeW0: 31
+
+# Excel导出配置
+excel:
+  headerStyle:
+    font: bold
+    size: 12
+    color: "FFFFFF"
+    backgroundColor: "4F81BD"
+  titleStyle:
+    font: bold
+    size: 16
+    color: "000000"
+  dataStyle:
+    font: normal
+    size: 11
+    color: "000000"
+  dateFormat: "YYYY-MM-DD"
+  numberFormat: "0.0"
+
+# 数据库配置
+database:
+  autoCreateTables: true
+  autoUpdateTables: true
+  batchInsert: true
+  transaction: true
+  vacuum: false
+
+# 月度统计配置
+monthlyStats:
+  enabled: true
+  includeAverage: true
+  includeMax: true
+  includeMin: true
+  includeTotal: true
+  includeCount: true
